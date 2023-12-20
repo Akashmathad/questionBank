@@ -30,6 +30,9 @@ app.use(express.json());
 
 app.use('/api/v1/question-bank/question', questionRouter);
 app.use('/api/v1/question-bank/user', userRouter);
+app.get('/testing',function(req, res){
+res.send("Hii there");
+})
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
